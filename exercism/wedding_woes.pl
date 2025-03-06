@@ -8,8 +8,8 @@ likes(malena, esteban).
 likes(gustavo, valeria).
 
 % Define the 'pairing' rule
-pairing(A, _):- chatty(A).
-pairing(_, A):- chatty(A).
+pairing(A, B):- chatty(A), A\=B.
+pairing(B, A):- chatty(A), A\=B.
 pairing(A, B):- likes(A, B), likes(B, A).
 
 % Define the 'seating' rule
